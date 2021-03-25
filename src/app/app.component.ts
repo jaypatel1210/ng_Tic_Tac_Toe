@@ -81,9 +81,23 @@ export class AppComponent {
       this.itemArray[4] === this.itemArray[6]
     ) {
       this.winMessage = `${this.itemArray[2]} won`;
+    } else {
+      this.checkIfAllFilled();
     }
   }
-
+  checkIfAllFilled(): void {
+    let count = 0;
+    this.itemArray.forEach(
+      (res) => {
+        if (res !== 'empty') {
+          count++;
+        }
+      }
+    );
+    if (count === 9) {
+      this.winMessage = 'All Filled';
+    }
+  }
   reloadGame = () => {
     this.winMessage = '';
     this.isCross = false;
