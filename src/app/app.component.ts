@@ -85,7 +85,7 @@ export class AppComponent {
       this.checkIfAllFilled();
     }
   }
-  checkIfAllFilled(): void {
+  checkIfAllFilled = () => {
     let count = 0;
     this.itemArray.forEach(
       (res) => {
